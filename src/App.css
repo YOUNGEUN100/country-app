@@ -14,7 +14,7 @@
   display: flex;
   justify-content:space-around;
   align-items: center;
-  border-bottom: 1px solid rgb(236, 231, 231);
+  border-bottom: 1px solid rgb(53, 27, 27);
 }
 
 .navbar a{
@@ -81,6 +81,7 @@
   display: inline-block;
   width: 90%;
   margin-bottom: 2rem;
+  padding-bottom: 1rem;
   box-shadow: 1px 2px 4px 1px #555555;
   background-color: rgb(247, 247, 245);
   border-radius: 2px;
@@ -147,8 +148,7 @@
 .detail .c_detail {
   display: flex;
   justify-content:flex-start;
-  /* border: 1px solid red; */
-  margin: 4rem auto;
+   margin: 4rem auto;
 }
 
 .detail .c_img {
@@ -159,3 +159,9 @@
   text-align: left;
   padding-left: 2rem;
 }
+
+.each_style{
+  text-decoration: none;
+  color:inherit;
+}
+

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function Home(props) {
   const {data,name,handleCountryChange,handleCountrySearch, darkmode, message} = props;
@@ -29,8 +30,8 @@ function Home(props) {
         <div className='country_group'>
         { data && ( data.map((item)=>{
           return (
-           
               <div key={item.capital} className='country_each'>
+                <Link to={`detail/${item.capital}`} className='each_style'>
                 <img src={item.flags.png} alt={item.capital} className='flg_img'/>
                 <div key={item.ccn3} className='country_info'>
                   <div className='cName'><strong>{item.name.common} {item.translations.kor.common} </strong></div>
@@ -38,7 +39,7 @@ function Home(props) {
                   <div><b>Region: </b>{item.region}</div>
                   <div><b>Capital: </b>{item.capital}</div>
                 </div>
-                <a href={`detail/${item.capital}`}>more</a>
+                </Link>
               </div>
             )
           })) 
