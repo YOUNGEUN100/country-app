@@ -1,0 +1,135 @@
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'SUITE-Regular';
+}
+
+.cName {
+  font-size: large;
+}
+.navbar {
+  background: #f3f0f0;
+  padding: 20px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  border-bottom: 1px solid rgb(236, 231, 231);
+}
+
+.navbar a{
+  /* color: #fff; */
+  text-decoration: none;
+  padding: 5px 1rem;
+}
+
+.navbar .navi {
+  visibility: hidden;
+}
+
+.navbar button {
+  cursor: pointer;
+  padding: 0.5rem 1.2rem;
+}
+
+.darkmode { 
+  background: #000;
+  color:white;
+}
+
+.darkHomemode {
+  background: #000;
+}
+
+
+.home {
+  /* border: 1px solid red; */
+  padding: 1rem;
+}
+
+.home .input_group {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.home .input_group input {
+  width: 25%;
+  height: 31px;
+  padding-left: 1rem;
+}
+
+.home .input_group button {
+  cursor: pointer;
+  width: 10%;
+  height: 35px;
+}
+
+
+.home .country_group .country_each {
+  /* border: 1px solid blue; */
+  display: inline-block;
+  width: 90%;
+  margin-bottom: 2rem;
+  box-shadow: 1px 2px 4px 1px #555555;
+  background-color: rgb(247, 247, 245);
+  border-radius: 2px;
+}
+
+.home .country_group .country_each:hover {
+  cursor: pointer;
+}
+
+.home .country_group .country_info {
+  /* border: 1px solid green; */
+  text-align: left;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.home .country_group {
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+@media (max-width: 400px) {
+  .home .country_group {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+ } 
+
+.home .country_group .flg_img {
+  border-radius: 2px;
+  width: 100%;
+  height: 150px;
+}
+
+.detail {
+  width: 100%;
+  height: 1000px;
+}
+
+.detail .d_btn {
+  cursor: pointer;
+  padding: 0.5rem 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.detail .c_detail {
+  display: flex;
+  justify-content:flex-start;
+  /* border: 1px solid red; */
+  margin: 4rem auto;
+}
+
+.detail .c_img {
+  width: 45%;
+}
+
+.detail .c_info {
+  text-align: left;
+  padding-left: 2rem;
+}
