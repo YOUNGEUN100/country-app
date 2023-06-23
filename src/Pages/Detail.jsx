@@ -9,12 +9,22 @@ function Detail(props) {
   const array = props.data;
   console.log("detail:", array);
 
-  let country = array? array.find((item) => {return item.capital == params.capital }) : null;
+  let country 
+  if (props.data) {country = array.find(item => item.ccn3 == params.ccn3 )} 
   console.log("country",country);
-
-  // let cca3 = country.cca3;
-  // let languages = country.languages[country.cca3];
-  //  console.log("lang", languages);
+  
+  let lang = {...country.languages};
+  let langKey;
+  let langValues;
+  //console.log("lang",lang);
+  if (country.languages) {
+    langKey = Object.getOwnPropertyNames(lang);
+    langKey = langKey[0];
+    //console.log(langKey); 
+    langValues = lang[langKey];
+    //console.log(langValues);
+  }
+  
 
   const goHome = () => {
     location.href = '/';
@@ -30,12 +40,12 @@ function Detail(props) {
             <img src={country.flags.png} className='c_img'/>
             <div className='c_info'> 
               <div className='cName'><strong>{country.name.common} {country.translations.kor.common}</strong> </div>
-              <div><b>Population: </b>{country.population}</div>
-              <div><b>Region: </b>{country.region}</div>
-              <div><b>Capital: </b>{country.capital}</div>
-              <div><b>Sub Region: </b>{country.subregion}</div>
-              <div><b>Top Level Domain: </b>{country.cca2}</div>
-              {/* <div>Languages: {country.languages.cal}</div> */}
+              <div><b>Population: </b>{country.population? (country.population).toLocaleString() : "" }</div>
+              <div><b>Region: </b>{country.region? country.region : ""}</div>
+              <div><b>Capital: </b>{country.capital? country.capital : ""}</div>
+              <div><b>Sub Region: </b>{country.subregion? country.subregion : ""}</div>
+              <div><b>Top Level Domain: </b>{country.cca2? country.cca2 : ""}</div>
+              <div><b>Languages: </b>{langValues}</div> 
           </div>
         </div>
         ) : null

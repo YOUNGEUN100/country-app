@@ -32,6 +32,10 @@
   padding: 0.5rem 1.2rem;
 }
 
+.navbar button:hover {
+    background-color: aquamarine;
+}
+
 .darkmode { 
   background: #000;
   color:white;
@@ -82,7 +86,7 @@
   width: 90%;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  box-shadow: 1px 2px 4px 1px #555555;
+  box-shadow: 1px 2px 8px 1px #b1afaf;
   background-color: rgb(247, 247, 245);
   border-radius: 2px;
 }

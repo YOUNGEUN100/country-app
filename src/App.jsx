@@ -26,10 +26,10 @@ function App() {
     fetch(API_URL)
       .then(res => {
           if (res.ok) {
-            return res.json()
+            setMessage("");
+            return res.json();
           } else {
             setMessage("검색한 국가가 이 페이지에 존재하지 않습니다.");
-            console.log(message);
           }
       })
       .then(data => {
@@ -69,9 +69,10 @@ function App() {
           handleCountrySearch={handleCountrySearch}
           darkmode={darkmode} 
           message={message}
+          setMessage={setMessage}
         />} />
         <Route 
-          path='/detail/:capital' 
+          path='/detail/:ccn3' 
           element={
           <Detail 
             data={countries} 
