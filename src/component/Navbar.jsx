@@ -11,7 +11,7 @@ function Navbar(props) {
         <h1>Where in the world?</h1>
         <div className='navi'>
         <Link to="/">Home</Link>
-        <Link to="/detail">Detail</Link>
+        <Link to="detail">Detail</Link>
         </div>
         <button onClick={handleDarkmode} className='dBtn'>Dark Mode</button>
       </nav>
