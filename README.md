@@ -1,5 +1,5 @@
 # country-app
-리액트로 만든 국가 검색 앱입니다.
+REST API를 활용한 국가정보 검색 서비스 앱입니다. made by react
 ## 홈페이지
 https://gleaming-meerkat-c45a5d.netlify.app/
 ## 기능
