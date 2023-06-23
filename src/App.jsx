@@ -8,6 +8,9 @@ import Navbar from './component/Navbar'
 function App() {
 
   const [darkmode, setDarkmode] = useState(false);
+  const [message, setMessage] = useState("");
+
+  // 다크모드 전환
   const handleDarkmode = () => {
     setDarkmode(!darkmode);
     console.log(darkmode)
@@ -21,7 +24,14 @@ function App() {
     if (name == "") { API_URL = `https://restcountries.com/v3.1/all`; } 
     else { API_URL = `https://restcountries.com/v3.1/name/${name}`;}
     fetch(API_URL)
-      .then(res => res.json())
+      .then(res => {
+          if (res.ok) {
+            return res.json()
+          } else {
+            setMessage("검색한 국가가 이 페이지에 존재하지 않습니다.");
+            console.log(message);
+          }
+      })
       .then(data => {
         setCountries(data);
         console.log(countries);
@@ -58,6 +68,7 @@ function App() {
           handleCountryChange={handleCountryChange}
           handleCountrySearch={handleCountrySearch}
           darkmode={darkmode} 
+          message={message}
         />} />
         <Route 
           path='/detail/:capital' 

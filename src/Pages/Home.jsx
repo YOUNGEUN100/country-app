@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function Home(props) {
-  const {data,name,handleCountryChange,handleCountrySearch, darkmode} = props;
+  const {data,name,handleCountryChange,handleCountrySearch, darkmode, message} = props;
   console.log('home: ', data);
 
   const [capital, setCapital] = useState('');
@@ -27,9 +27,9 @@ function Home(props) {
         </form>
         
         <div className='country_group'>
-        { data && data.map((item)=>{
+        { data && ( data.map((item)=>{
           return (
-            <>
+           
               <div key={item.capital} className='country_each'>
                 <img src={item.flags.png} alt={item.capital} className='flg_img'/>
                 <div key={item.ccn3} className='country_info'>
@@ -40,11 +40,12 @@ function Home(props) {
                 </div>
                 <a href={`detail/${item.capital}`}>more</a>
               </div>
-            </>
             )
-          })
+          })) 
         }
         </div>
+
+        {message && <div className='no_find'>{message}</div> } 
 
     </div>
   )
